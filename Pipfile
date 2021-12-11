@@ -9,7 +9,6 @@ numpy = "*"
 matplotlib = "*"
 tensorflow_datasets = "*"
 tensorflow = "*"
-numpy = "*"
 
 [requires]
 python_version = "3.8"
