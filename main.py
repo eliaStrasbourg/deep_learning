@@ -16,6 +16,7 @@ with input_col:
     st.header('Input part')
     st.write('Select the picture to test')
     st.write('mosaic for the picture')
+    st.button('Test AI')
 with AI_col:
     st.header('Result of the analyze')
     st.write('For this picture:')
