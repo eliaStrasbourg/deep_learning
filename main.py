@@ -10,7 +10,7 @@ from tensorflow.keras import layers
 # Layout
 
 st.set_page_config(layout="wide")
-input_col, AI_col = st.columns([1, 2])
+input_col, AI_col = st.columns([1, 3])
 
 with input_col:
     st.header('Input part')
