@@ -29,14 +29,13 @@ def main():
         st.image(random_image, width=100)
 
         result = st.button('Test AI')
-        if result:
-            st.image(random_image[pick_img - 1])
+        #if result:
+        #    st.image(random_image[pick_img - 1])
 
     if result:
         with AI_col:
             st.header('Result of the analyze')
             st.write('For this picture:')
-            st.write('display the picture')
             st.image(random_image[pick_img - 1], width=200)
             st.write('Our AI deterined this tree:')
             st.write('The real result is :')
