@@ -38,8 +38,8 @@ def tree(witch_tree):
 
 
 def main():
-	pickRandImage()
     with input_col:
+		pickRandImage()
         st.header('Input part')
         st.write('Select the picture to test')
         st.write('mosaic for the picture')
