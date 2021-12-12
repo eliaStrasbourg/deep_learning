@@ -41,10 +41,10 @@ def main():
 
         for x in range(3):
             for y in range(3):
+                plt.axis('off')
                 img = mpimg.imread(random_image[y + x * 3])
                 ax[x, y].imshow(img)
                 ax[x, y].set_title([y + x * 3 + 1])
-                plt.axis('off')
         st.pyplot(fig)
 
         result = st.button('Test AI')
