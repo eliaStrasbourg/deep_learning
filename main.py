@@ -16,6 +16,7 @@ input_col, AI_col = st.columns([1, 3])
 st.markdown("<style>.element-container{opacity:1 !important}</style>", unsafe_allow_html=True)
 
 def main():
+    if !result:
     with input_col:
         st.header('Input part')
         st.write('Select the picture to test')
