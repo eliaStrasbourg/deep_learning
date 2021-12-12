@@ -21,7 +21,12 @@ with input_col:
         file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
         images = glob.glob(random.choice(file_path_type))
         random_image.insert(0, random.choice(images))
+    pick_img = st.sidebar.radio("Which image?", 
+           [x for x in range(1, len(random_image))])
     st.image(random_image, width=100)
+
+    if pick_img:
+        st.image(pick_img, width=200)
 
 
     st.write('mosaic for the picture')
