@@ -25,7 +25,7 @@ with input_col:
     #pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image))])
     st.write('mosaic for the picture')
     for x in range(1, len(random_image)):
-        st.button(st.image(x, width=100))
+        st.button(st.image(random_image[x], width=100))
 
 #if pick_img:
 #    st.header('Result of the analyze')
