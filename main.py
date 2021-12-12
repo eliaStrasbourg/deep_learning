@@ -6,6 +6,7 @@ import tensorflow as tf
 import tensorflow_datasets as tfds
 import glob, random
 import matplotlib.image as mpimg
+import time
 from tensorflow import keras
 from tensorflow.keras import layers
 
@@ -65,6 +66,7 @@ def main():
                 st.markdown('<p style="font-family:sans-serif; color:Green; font-size: 42px;">the result is correct</p>', unsafe_allow_html=True)
             else:
                 st.markdown('<p style="font-family:sans-serif; color:Red; font-size: 42px;">the result isn t correct</p>', unsafe_allow_html=True)
+            time.sleep(30000) 
 
 
 
