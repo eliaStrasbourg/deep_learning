@@ -38,12 +38,12 @@ def tree(witch_tree):
 
 
 def main():
-    random_gen()
     with input_col:
         st.header('Input part')
         st.write('Select the picture to test')
         st.write('mosaic for the picture')
         st.write(random_image)
+        st.write(i)
 	
         plt.axis('off')
         fig, ax = plt.subplots(nrows = 3, ncols = 3)
@@ -80,4 +80,5 @@ def main():
 
 
 if __name__ == '__main__':
+    random_gen()
     main()
