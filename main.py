@@ -15,10 +15,11 @@ C1, C2, C3 = st.columns(3)
 
 
 with C2:
-    st.header('Input part')
+    st.markdown("<h1 style='text-align: center; color: red;'>Input part</h1>", unsafe_allow_html=True)
+    #st.header('Input part')
     st.write('Select the picture to test')
     random_image = []
-    for i in range(1, 10):
+    for i in range(1, 11):
         file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
         images = glob.glob(random.choice(file_path_type))
         random_image.insert(0, random.choice(images))
