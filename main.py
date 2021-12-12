@@ -16,8 +16,8 @@ input_col, AI_col = st.columns([1, 3])
 st.markdown("<style>.element-container{opacity:1 !important}</style>", unsafe_allow_html=True)
 
 def main():
-    result = False
-    if not result:
+    value = False
+    if not value:
         with input_col:
             st.header('Input part')
             st.write('Select the picture to test')
@@ -32,7 +32,10 @@ def main():
             st.image(random_image[pick_img - 1])
 
             result = st.button('Test AI')
-    else:
+            if result:
+                value = True
+
+    if value:
         with AI_col:
             st.header('Result of the analyze')
             st.write('For this picture:')
