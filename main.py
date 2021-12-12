@@ -17,6 +17,13 @@ st.set_page_config(layout="wide")
 input_col, AI_col = st.columns([1, 2])
 good_tree = ["Azadirachta Indica","Carissa Carandas", "Ficus Religiosa"]
 
+
+for i in range(1, 10):
+	file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
+	images = glob.glob(random.choice(file_path_type))
+	random_image.insert(0, random.choice(images))
+pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
+
 def tree(witch_tree):
     if witch_tree == 'A':
         return(good_tree[0])
@@ -31,11 +38,6 @@ def main():
         st.header('Input part')
         st.write('Select the picture to test')
         random_image = []
-        for i in range(1, 10):
-            file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
-            images = glob.glob(random.choice(file_path_type))
-            random_image.insert(0, random.choice(images))
-        pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
         st.write('mosaic for the picture')
         
         plt.axis('off')
