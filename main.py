@@ -22,23 +22,23 @@ with input_col:
         file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
         images = glob.glob(random.choice(file_path_type))
         random_image.insert(0, random.choice(images))
-    pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image))])
+    #pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image))])
     st.write('mosaic for the picture')
-    for x in range(1, len(pick_img)):
+    for x in range(1, len(random_image)):
         st.button(st.image(x, width=100))
 
-if pick_img:
-    st.header('Result of the analyze')
-    st.write('For this picture:')
-    print(pick_img)
-    st.write('display the picture')
-    st.write('Our AI deterined this tree:')
-    st.write('The real result is :')
-    st.write('The result is good / is not')
+#if pick_img:
+#    st.header('Result of the analyze')
+#    st.write('For this picture:')
+#    print(pick_img)
+#    st.write('display the picture')
+#    st.write('Our AI deterined this tree:')
+#    st.write('The real result is :')
+#    st.write('The result is good / is not')
 
 
 
-    st.button('Test AI')
+#    st.button('Test AI')
 
 
 
