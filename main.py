@@ -32,8 +32,7 @@ def main():
             st.image(random_image[pick_img - 1])
 
             result = st.button('Test AI')
-
-    if result:
+    else:
         with AI_col:
             st.header('Result of the analyze')
             st.write('For this picture:')
