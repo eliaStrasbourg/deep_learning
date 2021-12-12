@@ -28,13 +28,17 @@ with C2:
     st.write('mosaic for the picture')
     #st.image(random_image, width=100)
     
-    slected_image = []
+    selected_image = []
     st.subheader('select one image')
     for x in range(1, len(random_image)):
         st.image(random_image[x], caption=x, width=100)
-        slected_image = st.checkbox(st.image(random_image[x], width=100, caption=x))
-        if slected_image:
-            st.image(slected_image, width=100)
+        selected_image = st.checkbox(st.image(random_image[x], width=100, caption=x))
+        if selected_image:
+            selected_image.append(random_image[x])
+
+    submit = st.button('submit image')
+    if submit:
+        st.image(selected_image, width=100)
 
 
 
