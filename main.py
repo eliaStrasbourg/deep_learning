@@ -15,7 +15,7 @@ C1, C2, C3 = st.columns(3)
 
 
 with C2:
-    st.markdown("<h1 style='text-align: center; color: red;'>Input part</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: white;'>Input part</h1>", unsafe_allow_html=True)
     #st.header('Input part')
     st.write('Select the picture to test')
     random_image = []
