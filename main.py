@@ -27,11 +27,10 @@ def main():
         pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
         st.write('mosaic for the picture')
         st.image(random_image, width=100)
-        st.image(random_image[pick_img - 1])
 
         result = st.button('Test AI')
         if result:
-            t.image(random_image[pick_img - 1])
+            st.image(random_image[pick_img - 1])
 
     if result:
         with AI_col:
