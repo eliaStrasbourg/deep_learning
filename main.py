@@ -17,7 +17,7 @@ st.markdown("<style>.element-container{opacity:1 !important}</style>", unsafe_al
 result = False
 
 def main():
-    if result is False:
+    if result!:
         with input_col:
             st.header('Input part')
             st.write('Select the picture to test')
