@@ -31,7 +31,7 @@ with C2:
     slected_image = []
     st.subheader('select one image')
     for x in range(1, len(random_image)):
-        st.image(random_image[x], caption=x)
+        st.image(random_image[x], caption=x, width=100)
         slected_image = st.checkbox(st.image(random_image[x], width=100, caption=x))
         if slected_image:
             st.image(slected_image, width=100)
