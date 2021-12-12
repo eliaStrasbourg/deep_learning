@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import tensorflow_datasets as tfds
+import glob, random
 from tensorflow import keras
 from tensorflow.keras import layers
 
@@ -15,8 +16,18 @@ input_col, AI_col = st.columns([1, 3])
 with input_col:
     st.header('Input part')
     st.write('Select the picture to test')
+    random_image = []
+    for i in range(1, 10):
+        file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
+        images = glob.glob(random.choice(file_path_type))
+        random_image.insert(0, random.choice(images))
+    st.image(random_image, width=100)
+
+
     st.write('mosaic for the picture')
     st.button('Test AI')
+
+
 with AI_col:
     st.header('Result of the analyze')
     st.write('For this picture:')
