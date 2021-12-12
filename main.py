@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import tensorflow_datasets as tfds
 import glob, random
+import streamlit.components.v1 as components
 from tensorflow import keras
 from tensorflow.keras import layers
 
@@ -25,14 +26,13 @@ with C2:
     st.write('Select the picture to test')
     #pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image))])
     st.write('mosaic for the picture')
-    st.image(random_image, width=100)
+    #st.image(random_image, width=100)
     
-    option = st.selectbox(
-     'How would you like to be contacted?',
-     (st.image(random_image, width=100)))
+    imageCarouselComponent = components.declare_component("image-carousel-component", path="frontend/public")
+    selectedImageUrl = imageCarouselComponent(imageUrls=random_image, height=200)
 
-    st.write('You selected:')
-    st.image(option)
+    if selectedImageUrl is not None:
+        st.image(selectedImageUrl)
 
 
 #if pick_img:
