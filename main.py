@@ -42,6 +42,7 @@ def main():
         st.header('Input part')
         st.write('Select the picture to test')
         st.write('mosaic for the picture')
+        st.write(random_image)
 	
         plt.axis('off')
         fig, ax = plt.subplots(nrows = 3, ncols = 3)
