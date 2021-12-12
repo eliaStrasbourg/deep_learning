@@ -18,10 +18,12 @@ input_col, AI_col = st.columns([1, 2])
 good_tree = ["Azadirachta Indica","Carissa Carandas", "Ficus Religiosa"]
 
 random_image = []
-for i in range(1, 10):
+i = 1
+while i < 10:
 	file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
 	images = glob.glob(random.choice(file_path_type))
 	random_image.insert(0, random.choice(images))
+	i++
 pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
 
 def tree(witch_tree):
