@@ -31,7 +31,8 @@ with C2:
      'How would you like to be contacted?',
      (st.image(random_image, width=100))
 
-    st.write('You selected:', st.image(option))
+    st.write('You selected:')
+    st.image(option)
 
 
 #if pick_img:
