@@ -28,11 +28,14 @@ with C2:
     st.write('mosaic for the picture')
     #st.image(random_image, width=100)
     
-    imageCarouselComponent = components.declare_component("image-carousel-component")
-    selectedImageUrl = imageCarouselComponent(imageUrls=random_image, height=200)
+    slected_image = []
+    st.subheader('select one image')
+    x for x in range(1, len(random_image))
+    st.image(random_image[x], caption=x)
+    slected_image = st.checkbox(st.image(random_image[x], width=100, caption=x))
+    if slected_image:
+        st.image(slected_image, width=100)
 
-    if selectedImageUrl is not None:
-        st.image(selectedImageUrl)
 
 
 #if pick_img:
