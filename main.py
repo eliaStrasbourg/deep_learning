@@ -29,7 +29,7 @@ with C2:
     
     option = st.selectbox(
      'How would you like to be contacted?',
-     ('Email', 'Home phone', 'Mobile phone'))
+     (random_image))
 
     st.write('You selected:', option)
 
