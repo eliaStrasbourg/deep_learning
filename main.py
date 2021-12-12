@@ -24,6 +24,7 @@ while i < 10:
 	images = glob.glob(random.choice(file_path_type))
 	random_image.insert(0, random.choice(images))
 	++i
+	st.write(i)
 pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
 
 def tree(witch_tree):
