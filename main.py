@@ -61,7 +61,7 @@ def main():
         with AI_col:
             st.header('Result of the analyze')
             st.write('For this picture:')
-            st.image(st.session_state.random_image.[pick_img - 1], width=200)
+            st.image(st.session_state.random_image[pick_img - 1], width=200)
             witch_tree = random_image[st.session_state.pick_img - 1][15:16]
             st.write('Our AI deterined this tree:')
             ia_tree = ""
