@@ -38,6 +38,7 @@ def tree(witch_tree):
 
 
 def main():
+    random_gen()
     with input_col:
         st.header('Input part')
         st.write('Select the picture to test')
@@ -79,5 +80,4 @@ def main():
 
 
 if __name__ == '__main__':
-    random_gen()
     main()
