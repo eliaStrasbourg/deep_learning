@@ -6,7 +6,6 @@ import tensorflow as tf
 import tensorflow_datasets as tfds
 import glob, random
 import matplotlib.image as mpimg
-import time
 from tensorflow import keras
 from tensorflow.keras import layers
 
@@ -24,7 +23,7 @@ while i < 10:
 	images = glob.glob(random.choice(file_path_type))
 	random_image.insert(0, random.choice(images))
 	i += 1
-pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
+state.pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
 
 def tree(witch_tree):
     if witch_tree == 'A':
@@ -72,7 +71,6 @@ def main():
                 st.markdown('<p style="font-family:sans-serif; color:Green; font-size: 42px;">the result is correct</p>', unsafe_allow_html=True)
             else:
                 st.markdown('<p style="font-family:sans-serif; color:Red; font-size: 42px;">the result isn t correct</p>', unsafe_allow_html=True)
-            time.sleep(30000) 
 
 
 
