@@ -36,8 +36,6 @@ def tree(witch_tree):
     if witch_tree == 'F':
         return(good_tree[2])
 
-def deepLearning(path):
-	
 
 def main():
 	pickRandImage()
