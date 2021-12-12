@@ -13,8 +13,16 @@ from tensorflow.keras import layers
 
 st.set_page_config(layout="wide")
 input_col, AI_col = st.columns([1, 3])
-st.markdown("<style>.element-container{opacity:1 !important}</style>", unsafe_allow_html=True)
 good_tree = ["Azadirachta Indica","Carissa Carandas", "Ficus Religiosa"]
+
+def tree(witch_tree):
+    if witch_tree == 'A':
+        st.write(good_tree[0])
+    if witch_tree == 'C':
+        st.write(good_tree[1])
+    if witch_tree == 'F':
+        st.write(good_tree[2])
+
 
 def main():
     with input_col:
@@ -43,16 +51,6 @@ def main():
             st.write('Our AI deterined this tree:')
             st.write('The real result is :')
             st.write('The result is good / is not')
-
-
-def tree(witch_tree):
-    if witch_tree == 'A':
-        st.write(good_tree[0])
-    if witch_tree == 'C':
-        st.write(good_tree[1])
-    if witch_tree == 'F':
-        st.write(good_tree[2])
-
 
 if __name__ == '__main__':
 	main()
