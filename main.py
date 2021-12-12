@@ -46,11 +46,11 @@ def main():
 
 
 def tree(witch_tree):
-    if witch_tree = 'A':
+    if witch_tree == 'A':
         st.write(good_tree[0])
-    if witch_tree = 'C':
+    if witch_tree == 'C':
         st.write(good_tree[1])
-    if witch_tree = 'F':
+    if witch_tree == 'F':
         st.write(good_tree[2])
 
 
