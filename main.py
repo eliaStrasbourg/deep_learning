@@ -11,10 +11,10 @@ from tensorflow.keras import layers
 # Layout
 
 st.set_page_config(layout="wide")
-input_col, AI_col = st.columns([1, 3])
+C1, C2, C3 = st.columns([1, 3])
 
 
-with input_col:
+with C2:
     st.header('Input part')
     st.write('Select the picture to test')
     random_image = []
@@ -24,7 +24,7 @@ with input_col:
         random_image.insert(0, random.choice(images))
     #pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image))])
     st.write('mosaic for the picture')
-    st.image(random_image)
+    st.image(random_image, width=100)
 
 #if pick_img:
 #    st.header('Result of the analyze')
