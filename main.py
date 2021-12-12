@@ -36,7 +36,7 @@ def tree(witch_tree):
         return(good_tree[2])
 
 
-def display():
+def main():
     with input_col:
         st.header('Input part')
         st.write('Select the picture to test')
@@ -78,4 +78,4 @@ def display():
 
 if __name__ == '__main__':
 	randomImageGenerator()
-	display()
+	main()
