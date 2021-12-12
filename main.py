@@ -17,11 +17,11 @@ good_tree = ["Azadirachta Indica","Carissa Carandas", "Ficus Religiosa"]
 
 def tree(witch_tree):
     if witch_tree == 'A':
-        st.write(good_tree[0])
+        return(good_tree[0])
     if witch_tree == 'C':
-        st.write(good_tree[1])
+        return(good_tree[1])
     if witch_tree == 'F':
-        st.write(good_tree[2])
+        return(good_tree[2])
 
 
 def main():
@@ -47,10 +47,18 @@ def main():
             st.write('For this picture:')
             st.image(random_image[pick_img - 1], width=200)
             witch_tree = random_image[pick_img - 1][15:16]
-            tree(witch_tree)
             st.write('Our AI deterined this tree:')
+            ia_tree = ""
+            st.write(ia_tree)
             st.write('The real result is :')
-            st.write('The result is good / is not')
+            real_tree = tree(witch_tree)
+            st.write(real_tree)
+            if ia_tree == real_tree:
+                st.markdown('<p style="font-family:sans-serif; color:Green; font-size: 42px;">the result is correct</p>', unsafe_allow_html=True)
+            else:
+                st.markdown('<p style="font-family:sans-serif; color:Red; font-size: 42px;">the result isn t correct</p>', unsafe_allow_html=True)
+
+
 
 if __name__ == '__main__':
 	main()
