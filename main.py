@@ -25,7 +25,7 @@ with input_col:
         random_image.insert(0, random.choice(images))
     pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image))])
     st.write('mosaic for the picture')
-    st.image(random_image, width=100, caption=random_image[])
+    st.image(random_image, width=100)
 
     if pick_img:
         with AI_col:
