@@ -1,4 +1,4 @@
-
+import seaborn
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
@@ -41,7 +41,7 @@ def main():
         for x in range(3):
             for y in range(3):
                 ax[x, y].imshow(random_image[y + x * 3])
-                ax[x, y].set_title([y + x * 3])
+                ax[x, y].set_title([y + x * 3 + 1])
         st.pyplot(fig)
 
         #for y in range(1, 11):

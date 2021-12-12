@@ -9,6 +9,7 @@ numpy = "*"
 matplotlib = "*"
 tensorflow_datasets = "*"
 tensorflow = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.8"
