@@ -29,16 +29,17 @@ def main():
         st.image(random_image, width=100)
         st.image(random_image[pick_img - 1])
 
-        st.button('Test AI')
+        result = st.button('Test AI')
 
-    with AI_col:
-        st.header('Result of the analyze')
-        st.write('For this picture:')
-        print(pick_img)
-        st.write('display the picture')
-        st.write('Our AI deterined this tree:')
-        st.write('The real result is :')
-        st.write('The result is good / is not')
+    if result:
+        with AI_col:
+            st.header('Result of the analyze')
+            st.write('For this picture:')
+            print(random_image[pick_img - 1])
+            st.write('display the picture')
+            st.write('Our AI deterined this tree:')
+            st.write('The real result is :')
+            st.write('The result is good / is not')
 
 if __name__ == '__main__':
 	main()
