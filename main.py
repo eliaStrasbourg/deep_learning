@@ -38,7 +38,7 @@ def main():
             st.header('Result of the analyze')
             st.write('For this picture:')
             st.image(random_image[pick_img - 1], width=200)
-            witch_tree = random_image[pick_img - 1][15,16]
+            witch_tree = random_image[pick_img - 1][15:16]
             st.write(witch_tree)
             st.write('Our AI deterined this tree:')
             st.write('The real result is :')
