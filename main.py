@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import tensorflow_datasets as tfds
 import glob, random
+import matplotlib.image as mpimg
 from tensorflow import keras
 from tensorflow.keras import layers
 
@@ -40,7 +41,8 @@ def main():
 
         for x in range(3):
             for y in range(3):
-                ax[x, y].imshow(random_image[y + x * 3])
+                img = mpimg.imread(random_image[y + x * 3])
+                ax[x, y].imshow(img)
                 ax[x, y].set_title([y + x * 3 + 1])
         st.pyplot(fig)
 
