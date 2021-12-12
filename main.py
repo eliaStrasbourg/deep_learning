@@ -47,7 +47,7 @@ def main():
             st.write('For this picture:')
             st.image(random_image[pick_img - 1], width=200)
             witch_tree = random_image[pick_img - 1][15:16]
-            tree()
+            tree(witch_tree)
             st.write('Our AI deterined this tree:')
             st.write('The real result is :')
             st.write('The result is good / is not')
