@@ -25,7 +25,6 @@ def random_gen():
     	random_image.insert(0, random.choice(images))
     	i += 1
 random_image = []
-random_gen()
 pick_img = []
 pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
 
@@ -80,4 +79,5 @@ def main():
 
 
 if __name__ == '__main__':
+    random_gen()
     main()
