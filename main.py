@@ -45,7 +45,7 @@ def main():
             for y in range(3):
                 img = mpimg.imread(random_image[y + x * 3])
                 ax[x, y].imshow(img)
-                ax[x, y].set_title([y + x * 3 + 1])
+                ax[x, y].set_title(y + x * 3 + 1)
                 ax[x, y].axis('off')
         st.pyplot(fig)
 
