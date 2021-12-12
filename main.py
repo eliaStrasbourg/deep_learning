@@ -14,6 +14,7 @@ from tensorflow.keras import layers
 st.set_page_config(layout="wide")
 input_col, AI_col = st.columns([1, 3])
 st.markdown("<style>.element-container{opacity:1 !important}</style>", unsafe_allow_html=True)
+good_tree = ["Azadirachta Indica","Carissa Carandas", "Ficus Religiosa"]
 
 def main():
     with input_col:
@@ -37,7 +38,8 @@ def main():
             st.header('Result of the analyze')
             st.write('For this picture:')
             st.image(random_image[pick_img - 1], width=200)
-            st.write(random_image[pick_img - 1])
+            witch_tree = random_image[pick_img - 1][15,16]
+            st.write(witch_tree)
             st.write('Our AI deterined this tree:')
             st.write('The real result is :')
             st.write('The result is good / is not')
