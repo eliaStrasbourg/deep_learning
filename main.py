@@ -25,14 +25,14 @@ with input_col:
     st.write('mosaic for the picture')
     st.image(random_image, width=100)
 
-    if pick_img:
-        st.header('Result of the analyze')
-        st.write('For this picture:')
-        print(pick_img)
-        st.write('display the picture')
-        st.write('Our AI deterined this tree:')
-        st.write('The real result is :')
-        st.write('The result is good / is not')
+if pick_img:
+    st.header('Result of the analyze')
+    st.write('For this picture:')
+    print(pick_img)
+    st.write('display the picture')
+    st.write('Our AI deterined this tree:')
+    st.write('The real result is :')
+    st.write('The result is good / is not')
 
 
 
