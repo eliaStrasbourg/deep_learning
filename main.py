@@ -18,20 +18,20 @@ result = false
 
 def main():
     if not result:
-    with input_col:
-        st.header('Input part')
-        st.write('Select the picture to test')
-        random_image = []
-        for i in range(1, 10):
-            file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
-            images = glob.glob(random.choice(file_path_type))
-            random_image.insert(0, random.choice(images))
-        pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
-        st.write('mosaic for the picture')
-        st.image(random_image, width=100)
-        st.image(random_image[pick_img - 1])
+        with input_col:
+            st.header('Input part')
+            st.write('Select the picture to test')
+            random_image = []
+            for i in range(1, 10):
+                file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
+                images = glob.glob(random.choice(file_path_type))
+                random_image.insert(0, random.choice(images))
+            pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
+            st.write('mosaic for the picture')
+            st.image(random_image, width=100)
+            st.image(random_image[pick_img - 1])
 
-        result = st.button('Test AI')
+            result = st.button('Test AI')
 
     if result:
         with AI_col:
