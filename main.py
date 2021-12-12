@@ -17,12 +17,14 @@ input_col, AI_col = st.columns([1, 2])
 good_tree = ["Azadirachta Indica","Carissa Carandas", "Ficus Religiosa"]
 
 random_image = []
-i = 1
-while i < 10:
-	file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
-	images = glob.glob(random.choice(file_path_type))
-	random_image.insert(0, random.choice(images))
-	i += 1
+@st.cache
+def random_gen():
+    i = 1
+    while i < 10:
+    	file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
+    	images = glob.glob(random.choice(file_path_type))
+    	random_image.insert(0, random.choice(images))
+    	i += 1
 pick_img = []
 pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
 
@@ -76,4 +78,5 @@ def main():
 
 
 if __name__ == '__main__':
+    random_gen()
 	main()
