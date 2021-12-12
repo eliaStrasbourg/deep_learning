@@ -37,10 +37,7 @@ def main():
         st.write('mosaic for the picture')
 		for y in range(1, 10):
 			st.image(random_image[y], width=100, caption=y)
-
         result = st.button('Test AI')
-        #if result:
-        #    st.image(random_image[pick_img - 1])
 
     if result:
         with AI_col:
