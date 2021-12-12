@@ -27,6 +27,12 @@ with C2:
     st.write('mosaic for the picture')
     st.image(random_image, width=100)
 
+    file_png = st.file_uploader("Upload a PNG image", type=([".png"]))
+
+    if file_png:
+        file_png_bytes = st.file_reader(file_png)
+        st.image(file_png_bytes)
+
 #if pick_img:
 #    st.header('Result of the analyze')
 #    st.write('For this picture:')
