@@ -14,9 +14,9 @@ from tensorflow.keras import layers
 st.set_page_config(layout="wide")
 input_col, AI_col = st.columns([1, 3])
 st.markdown("<style>.element-container{opacity:1 !important}</style>", unsafe_allow_html=True)
-result = False
 
 def main():
+    result = False
     if not result:
         with input_col:
             st.header('Input part')
