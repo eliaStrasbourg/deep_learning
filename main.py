@@ -27,28 +27,29 @@ def tree(witch_tree):
 
 def main():
     with input_col:
-        st.header('Input part')
-        st.write('Select the picture to test')
-        random_image = []
-        for i in range(1, 10):
-            file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
-            images = glob.glob(random.choice(file_path_type))
-            random_image.insert(0, random.choice(images))
-        pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
-        st.write('mosaic for the picture')
-        
-        fig, ax = plt.subplots(nrows = 3, ncols = 3)
+        with st.form('Form1'):
+            st.header('Input part')
+            st.write('Select the picture to test')
+            random_image = []
+            for i in range(1, 10):
+                file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
+                images = glob.glob(random.choice(file_path_type))
+                random_image.insert(0, random.choice(images))
+            pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
+            st.write('mosaic for the picture')
+            
+            fig, ax = plt.subplots(nrows = 3, ncols = 3)
 
-        for x in range(3):
-            for y in range(3):
-                img = mpimg.imread(random_image[y + x * 3])
-                ax[x, y].imshow(img)
-                ax[x, y].set_title([y + x * 3 + 1])
-        st.pyplot(fig)
+            for x in range(3):
+                for y in range(3):
+                    img = mpimg.imread(random_image[y + x * 3])
+                    ax[x, y].imshow(img)
+                    ax[x, y].set_title([y + x * 3 + 1])
+            st.pyplot(fig)
 
-        #for y in range(1, 11):
-        #    st.image(random_image[y], width=100, caption=y)
-        result = st.button('Test AI')
+            #for y in range(1, 11):
+            #    st.image(random_image[y], width=100, caption=y)
+            result = st.button('Test AI')
 
     if result:
         with AI_col:
