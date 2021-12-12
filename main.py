@@ -27,6 +27,7 @@ def main():
         pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image))])
         st.write('mosaic for the picture')
         st.image(random_image, width=100)
+        st.image(pick_img)
 
         st.button('Test AI')
 
