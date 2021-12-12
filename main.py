@@ -37,7 +37,7 @@ def main():
         pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
         st.write('mosaic for the picture')
         
-        fig, ax = plt.subplots(nrows = 3, ncols = 3, figsize=(100, 100))
+        fig, ax = plt.subplots(nrows = 3, ncols = 3, figsize=(9, 7))
 
         for x in range(3):
             for y in range(3):
