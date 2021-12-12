@@ -14,7 +14,7 @@ from tensorflow.keras import layers
 # Layout
 
 st.set_page_config(layout="wide")
-input_col, AI_col = st.columns([1, 3])
+input_col, AI_col = st.columns([1, 2])
 good_tree = ["Azadirachta Indica","Carissa Carandas", "Ficus Religiosa"]
 
 def tree(witch_tree):
