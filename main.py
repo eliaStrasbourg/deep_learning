@@ -26,12 +26,13 @@ with C2:
     #pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image))])
     st.write('mosaic for the picture')
     st.image(random_image, width=100)
+    
+    option = st.selectbox(
+     'How would you like to be contacted?',
+     ('Email', 'Home phone', 'Mobile phone'))
 
-    file_png = st.file_uploader("Upload a PNG image", type=([".png"]))
+st.write('You selected:', option)
 
-    if file_png:
-        file_png_bytes = st.file_reader(file_png)
-        st.image(file_png_bytes)
 
 #if pick_img:
 #    st.header('Result of the analyze')
