@@ -28,7 +28,7 @@ with C2:
     st.write('mosaic for the picture')
     #st.image(random_image, width=100)
     
-    imageCarouselComponent = components.declare_component("image-carousel-component", path="frontend/public")
+    imageCarouselComponent = components.declare_component("image-carousel-component")
     selectedImageUrl = imageCarouselComponent(imageUrls=random_image, height=200)
 
     if selectedImageUrl is not None:
