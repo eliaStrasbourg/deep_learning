@@ -13,6 +13,7 @@ from tensorflow.keras import layers
 
 st.set_page_config(layout="wide")
 input_col, AI_col = st.columns([1, 3])
+st.markdown("<style>.element-container{opacity:1 !important}</style>", unsafe_allow_html=True)
 
 with input_col:
     st.header('Input part')
@@ -24,7 +25,7 @@ with input_col:
         random_image.insert(0, random.choice(images))
     pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image))])
     st.write('mosaic for the picture')
-    st.image(random_image, width=100)
+    st.image(random_image, width=100, caption=random_image[])
 
     if pick_img:
         with AI_col:
