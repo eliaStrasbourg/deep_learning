@@ -38,12 +38,11 @@ def main():
         pick_img = st.sidebar.radio("Which image?", [x for x in range(1, len(random_image) + 1)])
         st.write('mosaic for the picture')
         
+        plt.axis('off')
         fig, ax = plt.subplots(nrows = 3, ncols = 3)
 
-        plt.axis('off')
         for x in range(3):
             for y in range(3):
-            
                 img = mpimg.imread(random_image[y + x * 3])
                 ax[x, y].imshow(img)
                 ax[x, y].set_title([y + x * 3 + 1])
