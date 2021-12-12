@@ -17,7 +17,7 @@ st.set_page_config(layout="wide")
 input_col, AI_col = st.columns([1, 2])
 good_tree = ["Azadirachta Indica","Carissa Carandas", "Ficus Religiosa"]
 
-
+random_image = []
 for i in range(1, 10):
 	file_path_type = ["./leaf dataset/Azadirachta Indica (Neem)/*.jpg", "./leaf dataset/Carissa Carandas (Karanda)/*.jpg", "./leaf dataset/Ficus Religiosa (Peepal Tree)/*jpg"]
 	images = glob.glob(random.choice(file_path_type))
@@ -37,9 +37,8 @@ def main():
     with input_col:
         st.header('Input part')
         st.write('Select the picture to test')
-        random_image = []
         st.write('mosaic for the picture')
-        
+	
         plt.axis('off')
         fig, ax = plt.subplots(nrows = 3, ncols = 3)
 
