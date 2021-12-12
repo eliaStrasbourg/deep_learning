@@ -47,7 +47,8 @@ def main():
                 ax[x, y].imshow(img)
                 ax[x, y].set_title(y + x * 3 + 1)
                 ax[x, y].axis('off')
-                ax[x, y].text(0.5,-0.1, y + x * 3 + 1, size=12, ha="center")
+                ax[x, y].text(0.5,-0.1, y + x * 3 + 1, size=12, ha="center", 
+         transform=ax[x, y].transAxes)
         st.pyplot(fig)
 
         result = st.button('Test AI')
