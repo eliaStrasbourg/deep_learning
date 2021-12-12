@@ -11,7 +11,7 @@ from tensorflow.keras import layers
 # Layout
 
 st.set_page_config(layout="wide")
-C1, C2, C3 = st.columns([1, 3])
+C1, C2, C3 = st.columns(3)
 
 
 with C2:
