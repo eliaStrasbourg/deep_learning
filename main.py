@@ -11,6 +11,18 @@ from tensorflow.keras import layers
 import os
 
 
+CLASS_NAMES = ['Azadirachta Indica (Neem)',
+            'Carissa Carandas (Karanda)',
+            'Ficus Religiosa (Peepal Tree)']
+CLASS_NUMBER = 3
+
+IMAGE_SIZE = (150, 200)
+IMAGE_SHAPE = (150, 200, 3)
+
+SHUFFLE_SIZE = 10000
+BATCH_SIZE = 32
+TRAIN_SPLIT = 0.8
+TEST_SPLIT = 0.2
 # Layout
 
 st.set_page_config(layout="wide")
@@ -23,20 +35,6 @@ pick_img = []
 
 @st.cache()
 def loadModel():
-    CLASS_NAMES = ['Azadirachta Indica (Neem)',
-              'Carissa Carandas (Karanda)',
-              'Ficus Religiosa (Peepal Tree)']
-    CLASS_NUMBER = 3
-
-    IMAGE_SIZE = (150, 200)
-    IMAGE_SHAPE = (150, 200, 3)
-
-    SHUFFLE_SIZE = 10000
-    BATCH_SIZE = 32
-    TRAIN_SPLIT = 0.8
-    TEST_SPLIT = 0.2
-
-
     # 1. First we load the datasets
 
     def image_parser(filename, label):
@@ -135,6 +133,12 @@ def loadModel():
     return model
 
 
+def getModelOutputClass(model, image):
+    predictions = model.predict(image)
+
+    return CLASS_NAMES[np.argmax(predictions)]
+
+
 def pickRandImage():
 	i = 1
 	while i < 10:
@@ -160,7 +164,6 @@ def main():
         pickRandImage()
         st.header('Input part')
         st.write('Select the picture to test')
-        st.write('mosaic for the picture')
 	
         plt.axis('off')
         fig, ax = plt.subplots(nrows = 3, ncols = 3)
@@ -180,7 +183,7 @@ def main():
     if result:
         with AI_col:
 
-            st.header('Result of the analyze')
+            st.header('Result of the classification')
             st.write('For this picture:')
             st.image(random_image[pick_img - 1], width=200)
             witch_tree = random_image[pick_img - 1][15:16]
